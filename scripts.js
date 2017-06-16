@@ -41,14 +41,18 @@ $(document).ready(function() {
 
 	
 		$("button.play").click(function() {
+			
+			
 			var die = randomizeNum();
-			alert(die);
-			var enteredNum = Player.rollNumbers.push(die);
-			alert(enteredNum);
+			console.log(die);
+			
+			var enteredNum =players.Player.rollNumbers[0].push(die);
+			console.log(enteredNum);
 
-			var score =  Player.rollNumbers.reduce(function(total, enteredNum){
+			var score =  players.Player[0].rollNumbers.reduce(function(total, enteredNum){
 				return total + enteredNum;
 			});
+			console.log(score);
 			
 			// if (player.total == ) {
 
