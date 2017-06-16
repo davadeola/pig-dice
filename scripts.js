@@ -40,28 +40,36 @@ $(document).ready(function() {
 	
 
 	
-		$("button.play").click(function() {
-			
-			
-			var die = randomizeNum();
-			console.log(die);
-			
-			var enteredNum =players.Player.rollNumbers[0].push(die);
-			console.log(enteredNum);
+	$("button.play").click(function() {
+		alert("Let " + players[0].name+" Play");
 
-			var score =  players.Player[0].rollNumbers.reduce(function(total, enteredNum){
+		var die = randomizeNum();
+		console.log(die);
+
+
+		if (die === 1 ) {
+			
+			players[1].rollNumbers.push(die);
+			
+			alert(players[1].name + " will play");
+			
+			var score =  players[1].rollNumbers.reduce(function(total, enteredNum){
 				return total + enteredNum;
 			});
-			console.log(score);
 			
-			// if (player.total == ) {
+			alert(score);
 
+		}else{
+			players[0].rollNumbers.push(die);
 			
 
-			// }
-		});		
+			var score =  players[0].rollNumbers.reduce(function(total, enteredNum){
+				return total + enteredNum;
+			});
+		}
+	});		
 
 	
-		
+
 
 })
