@@ -1,0 +1,34 @@
+body, html{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.display1{
+  background: #0099CC;
+
+}
+
+.display2{
+  background: #FF8800;
+  display: none;
+}
+
+.display{
+  width: 50%;
+  height: 350px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.display h1{
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.score{
+  font-size: 9em;
+  text-align: center;
+}

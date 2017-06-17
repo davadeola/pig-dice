@@ -2,7 +2,7 @@
 var players = [];
 
 function Player(name) {
-	this.name = name;
+	this.playerName = name;
 	this.rollTotals = [];
 	this.total = 0;
 
@@ -36,11 +36,11 @@ $(document).ready(function() {
 		players.push(newPlayer1, newPlayer2);
 
 		console.log(players);
-
+alert("Let " + players[0].playerName + " Play");
 	});
 
 	$("button#die1").click(function() {
-		alert("Let " + players[0].name + " Play");
+
 		var die = randomizeNum();
 		console.log(die);
 		if (die === 1) {
@@ -48,8 +48,11 @@ $(document).ready(function() {
 			$("button#hold1").hide();
 			$("button#die2").show();
 			$("button#hold2").show();
+			$("div.display").toggle("slow");
+
+
 			numTempo = [];
-			alert("Player Two's Turn");
+			alert(players[1].playerName + "'s Turn");
 		}else {
 
 			numTempo.push(die);
@@ -75,12 +78,14 @@ $("button#hold1").click(function () {
 	$("button#hold1").hide();
 	$("button#die2").show();
 	$("button#hold2").show();
-	alert("Player Two's Turn");
+	$("div.display").toggle("slow");
+
+	alert(players[1].playerName+"'s Turn");
 	numTempo = [];
 	console.log("numTempo1 later is "+ numTempo);
 
 	if (score >= 100) {
-		alert(players[0].name + "has won");
+		alert(players[0].playerName+ "has won");
 		$("button#die1").hide();
 		$("button#hold1").hide();
 		$("button#die2").hide();
@@ -91,7 +96,7 @@ $("button#hold1").click(function () {
 
 //Player 2 LOGIC
 $("button#die2").click(function() {
-	alert("Let " + players[1].name + " Play");
+
 	var die = randomizeNum();
 	console.log(die);
 	if (die === 1) {
@@ -99,7 +104,9 @@ $("button#die2").click(function() {
 		$("button#hold2").hide();
 		$("button#die1").show();
 		$("button#hold1").show();
-		alert("Player One's Turn");
+		$("div.display").toggle("slow");
+
+		alert(players[0].playerName+"'s Turn");
 		numTempo = [];
 	}else {
 		numTempo.push(die);
@@ -125,11 +132,12 @@ $("button#hold2").click(function () {
 	$("button#hold2").hide();
 	$("button#die1").show();
 	$("button#hold1").show();
-	alert("Player One's Turn");
+	$("div.display").toggle("slow");
+	alert(players[0].playerName+"'s Turn");
 	numTempo = [];
-	
+
 	if (score >= 100) {
-		alert(players[0].name + "has won");
+		alert(players[1].playerName + "has won");
 		$("button#die1").hide();
 		$("button#hold1").hide();
 		$("button#die2").hide();
