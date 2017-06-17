@@ -4,17 +4,16 @@ var players = [];
 function Player(name) {
 	this.name = name;
 	this.rollNumbers = [];
-	
+
 }
 
 function randomizeNum () {
 	return Math.floor(Math.random() * (6)) + 1;
-};
+}
 
 function changeUser(argument) {
 	// body...
 }
-
 //USER LOGIC
 
 $(document).ready(function() {
@@ -35,11 +34,11 @@ $(document).ready(function() {
 
 
 
-	
 
-	
 
-	
+
+
+
 	$("button.play").click(function() {
 		alert("Let " + players[0].name+" Play");
 
@@ -47,29 +46,19 @@ $(document).ready(function() {
 		console.log(die);
 
 
-		if (die === 1 ) {
-			
+		if (die === 1, function(){
+
+			var die = randomizeNum();
+			console.log(die);
 			players[1].rollNumbers.push(die);
-			
+
 			alert(players[1].name + " will play");
-			
-			var score =  players[1].rollNumbers.reduce(function(total, enteredNum){
-				return total + enteredNum;
-			});
-			
-			alert(score);
 
-		}else{
-			players[0].rollNumbers.push(die);
-			
+			for (var score = 0; score <= 100;) {
+				var score =  players[1].rollNumbers.reduce(function(total, enteredNum){
+					return total + enteredNum;
+				});
 
-			var score =  players[0].rollNumbers.reduce(function(total, enteredNum){
-				return total + enteredNum;
-			});
-		}
-	});		
+			}alert(score);
 
-	
-
-
-})
+		})
