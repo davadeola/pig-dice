@@ -4,23 +4,24 @@ var players = [];
 function Player(name) {
 	this.name = name;
 	this.rollNumbers = [];
+	this.total = 0;
 
 }
 
-function randomizeNum () {
+function randomizeNum() {
 	return Math.floor(Math.random() * (6)) + 1;
 }
 
-function changeUser(argument) {
-	// body...
-}
+
 //USER LOGIC
 
 $(document).ready(function() {
-	$("form.playerNames").submit(function (event) {
+	$("form.playerNames").submit(function(event) {
 		event.preventDefault();
+		//collect the names of the players
 		var playerOne = $("input#playerOne").val();
 		var playerTwo = $("input#playerTwo").val();
+		//create new objects for each player
 
 		var newPlayer1 = new Player(playerOne);
 		console.log(newPlayer1);
@@ -32,33 +33,34 @@ $(document).ready(function() {
 		console.log(players);
 	});
 
-
-
-
-
-
-
-
-	$("button.play").click(function() {
-		alert("Let " + players[0].name+" Play");
-
+	$("button#die1").click(function() {
+		alert("Let " + players[0].name + " Play");
 		var die = randomizeNum();
-		console.log(die);
+		console.log(typeof  die);
+		if (die === 1) {
+			$("button#die1").hide();
+			$("button#hold1").hide();
+			alert("Player Two's Turn");
+		}else {
+			players[0].rollNumbers.push(die);
+			console.log(players[0].rollNumbers);
+		}
+	}
+	);
+
+	$("button#hold1").click(function () {
+		var total = players[0].rollNumbers.reduce(function(total, enteredNum) {
+		  return total + enteredNum;
+		});
+		players[0].total = total;
+		console.log("Total is "+players[0].total );
+		$("button#die1").hide();
+		$("button#hold1").hide();
+		alert("Player Two's Turn");
+	})
+	//
 
 
-		if (die === 1, function(){
 
-			var die = randomizeNum();
-			console.log(die);
-			players[1].rollNumbers.push(die);
 
-			alert(players[1].name + " will play");
-
-			for (var score = 0; score <= 100;) {
-				var score =  players[1].rollNumbers.reduce(function(total, enteredNum){
-					return total + enteredNum;
-				});
-
-			}alert(score);
-
-		})
+});
