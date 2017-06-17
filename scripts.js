@@ -16,6 +16,9 @@ function randomizeNum() {
 //USER LOGIC
 
 $(document).ready(function() {
+	$("button#die2").hide();
+	$("button#hold2").hide();
+
 	$("form.playerNames").submit(function(event) {
 		event.preventDefault();
 		//collect the names of the players
