@@ -35,7 +35,8 @@ $(document).ready(function() {
 
 		players.push(newPlayer1, newPlayer2);
 
-		console.log(players);
+		$("h1#player1").text(players[0].playerName);
+		$("h1#player2").text(players[1].playerName);
 alert("Let " + players[0].playerName + " Play");
 	});
 
@@ -72,7 +73,7 @@ $("button#hold1").click(function () {
 		return total + enteredNum;
 	});
 	players[0].total = score;
-	console.log("Score is "+players[0].total );
+	$("h2#score1").text(score);
 
 	$("button#die1").hide();
 	$("button#hold1").hide();
@@ -125,7 +126,7 @@ $("button#hold2").click(function () {
 		return total + enteredNum;
 	});
 	players[1].total = score;
-	console.log("Score is "+players[1].total );
+	$("h2#score2").text(score);
 
 
 	$("button#die2").hide();

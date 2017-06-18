@@ -1,7 +1,7 @@
 body, html{
   padding: 0;
   margin: 0;
-  overflow: hidden;
+
 }
 
 .display1{
@@ -19,7 +19,11 @@ body, html{
   height: 350px;
   margin-right: auto;
   margin-left: auto;
+  padding-left: auto;
+  padding-right: auto;
+  animation-duration:2s;
 }
+
 
 .display h1{
   color: white;
@@ -31,4 +35,12 @@ body, html{
 .score{
   font-size: 9em;
   text-align: center;
+}
+
+img{
+  width: 10em;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  padding-top: 10em;
+
 }

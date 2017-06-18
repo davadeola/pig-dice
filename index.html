@@ -15,24 +15,24 @@
 				<form class="playerNames">
 					<div class="form-group">
 						<label>Player One</label>
-						<input class="form-control"  id="playerOne" placeholder=" Name of player one">
+						<input class="form-control"  id="playerOne" placeholder=" Name of player one" required="true">
 					</div>
 					<div class="form-group">
 						<label>Player Two</label>
-						<input class="form-control" id="playerTwo" placeholder="Name of player two">
+						<input class="form-control" id="playerTwo" placeholder="Name of player two" required="true">
 					</div>
 					<button type ="submit" class="btn btn-lg btn-success">Enter</button>
 				</form>
 			</div>
 
 			<div class="col-md-4">
-				<h1>PLAYER ONE</h1>
+				<h1 id="player1">PLAYER ONE</h1>
 				<button id="die1" class="btn btn-info" >ROLL</button>
 				<button id="hold1"  class="btn btn-info">HOLD</button>
 			</div>
 
 			<div class="col-md-4">
-				<h1>PLAYER TWO</h1>
+				<h1 id="player2">PLAYER TWO</h1>
 				<button id="die2" class="btn btn-warning">ROLL</button>
 				<button id="hold2"  class="btn btn-warning">HOLD</button>
 			</div>
@@ -42,18 +42,28 @@
 
 	</div>
 <div class="container">
+
 	<div class="row" id="display">
+		<div class="col-md-1 ">
+			<img src="dice.png" alt="" class="animated bounce">
+		</div>
+		<div class="col-md-10">
 
 
-		<div class="display1 display animated rollIn">
+	<div class="display1 display animated rollIn">
 			<h1>SCORE</h1>
-			<h2 class="score">100</h2>
+			<h2 id="score1" class="score">0</h2>
 		</div>
 		<div class="display2 display animated rollIn">
 				<h1>SCORE</h1>
-				<h2 class="score"></h2>
+				<h2 id="score2" class="score">0</h2>
+		</div>
+		</div>
+		<div class="col-md-1">
+			<img src="dice.png" alt="" class="animated bounce">
 		</div>
 	</div>
+
 </div>
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
 <script type="text/javascript" src="scripts.js"></script>
