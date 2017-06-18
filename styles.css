@@ -23,13 +23,15 @@ body, html{
   padding-right: auto;
   animation-duration:2s;
 }
-
+#tempoTotal1,
 #tempoSto1{
   color: #0099CC;
+  
 }
-
+#tempoTotal2,
 #tempoSto2{
   color: #FF8800;
+
 }
 
 

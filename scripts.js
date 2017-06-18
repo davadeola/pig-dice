@@ -57,11 +57,16 @@ alert("Let " + players[0].playerName + " Play");
 
 
 			numTempo = [];
+			$("h4#tempoTotal1").text("0");
 			alert(players[1].playerName + "'s Turn");
 		}else {
 
 			numTempo.push(die);
 			console.log(numTempo);
+			var total = numTempo.reduce(function(total, enteredNum) {
+				return total + enteredNum;
+			});
+			$("h4#tempoTotal1").text(total);
 		}
 	}
 );
@@ -113,9 +118,14 @@ $("button#die2").click(function() {
 
 		alert(players[0].playerName+"'s Turn");
 		numTempo = [];
+		$("h4#tempoTotal2").text("0");
 	}else {
 		numTempo.push(die);
 		console.log(numTempo);
+		var total = numTempo.reduce(function(total, enteredNum) {
+			return total + enteredNum;
+		});
+		$("h4#tempoTotal2").text(total);
 	}
 }
 );
