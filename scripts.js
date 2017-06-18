@@ -20,7 +20,8 @@ function randomizeNum() {
 $(document).ready(function() {
 	$("button#die2").hide();
 	$("button#hold2").hide();
-
+	$("button#die1").hide();
+	$("button#hold1").hide();
 	$("form.playerNames").submit(function(event) {
 		event.preventDefault();
 		//collect the names of the players
@@ -37,13 +38,16 @@ $(document).ready(function() {
 
 		$("h1#player1").text(players[0].playerName);
 		$("h1#player2").text(players[1].playerName);
+		$("button#die1").show();
+		$("button#hold1").show();
 alert("Let " + players[0].playerName + " Play");
 	});
 
 	$("button#die1").click(function() {
 
 		var die = randomizeNum();
-		console.log(die);
+		$("h2#tempoSto1").text(die);
+
 		if (die === 1) {
 			$("button#die1").hide();
 			$("button#hold1").hide();
@@ -99,7 +103,7 @@ $("button#hold1").click(function () {
 $("button#die2").click(function() {
 
 	var die = randomizeNum();
-	console.log(die);
+	$("h2#tempoSto2").text(die);
 	if (die === 1) {
 		$("button#die2").hide();
 		$("button#hold2").hide();
